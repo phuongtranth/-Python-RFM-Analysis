@@ -14,7 +14,39 @@ This is a transnational data set which contains all the transactions occurring b
 | CustomerID  | Customer number. Nominal, a 5-digit integral number uniquely assigned to each customer.                                                                     |
 | Country     | Country name. Nominal, the name of the country where each customer resides.                                                                                 |
 
-### II. EDA 
+### II. Data Preparation
+#### Cleaning Data
+This part involved checking for missing values, duplicates, and incorrect data types. Appropriate actions were taken, such as imputing missing values, removing duplicates, and correcting data types to ensure data integrity. Additionally, any incorrect or outlier values were identified and handled based on the dataset's context to maintain accuracy and consistency.
+
+#### RFM Calculation
+Following data cleaning, the Recency, Frequency, and Monetary values were calculated for each customer. Recency was determined based on the number of days since the last purchase, Frequency measured the total number of transactions, and Monetary value represented the total spending of each customer.
+```python
+# Calculate Recency
+last_purchase_date = transactions.groupby('CustomerID')['InvoiceDate'].max().reset_index(name='LastPurchaseDate')
+today = pd.to_datetime('2011-12-31')
+last_purchase_date['Recency'] = (today - last_purchase_date['LastPurchaseDate']).dt.days
+
+# Calculate Frequency
+frequency = transactions.groupby('CustomerID')['InvoiceDate'].nunique().reset_index(name='Frequency')
+frequency['Rank'] = frequency['Frequency'].rank(method='first').astype(int)
+
+# Calculate Monetary
+monetary = transactions.assign(Revenue=transactions['Quantity'] * transactions['UnitPrice']).groupby('CustomerID')['Revenue'].sum().reset_index(name='Monetary')
+
+# Merge in 1 df
+rfm = last_purchase_date.merge(frequency, on='CustomerID').merge(monetary, on='CustomerID')
+rfm.shape
+```
+Quintiles were used to assign scores to each RFM component, categorizing customers into segments based on their relative RFM values. These scores served as the foundation for customer segmentation and further analysis.
+```python
+# Quintile
+rfm['R_Score'] = pd.qcut(rfm['Recency'], q=5, labels=[5,4,3,2,1])
+rfm['F_Score'] = pd.qcut(rfm['Rank'], q=5, labels= [1,2,3,4,5])
+rfm['M_Score'] = pd.qcut(rfm['Monetary'], q=5, labels= [1,2,3,4,5])
+
+# Create RFM score
+rfm['RFM_Score'] = rfm['R_Score'].astype(str) + rfm['F_Score'].astype(str) + rfm['M_Score'].astype(str)
+```
 ### III. Data Visualization and Insight
 #### RFM Distribution Analysis
 **Recency Distribution:** The graph shows the distribution of customers based on how recently they made a purchase.
