@@ -51,17 +51,20 @@ rfm['RFM_Score'] = rfm['R_Score'].astype(str) + rfm['F_Score'].astype(str) + rfm
 #### RFM Distribution Analysis
 **Recency Distribution:** The graph shows the distribution of customers based on how recently they made a purchase.
 ![a](https://github.com/user-attachments/assets/e41de750-18d4-441b-808a-da0281f3b65a)
+
 **Key observations:**
 The two highest bars are in the 0-100 range with over 2600 customers (over 60% of total customers), indicating that the company has a strong base of recent customers, which is positive.
 
 **Frequency Distribution:** This graph shows how often customers make purchases.
 ![b](https://github.com/user-attachments/assets/5e4e5f7f-66d3-48a1-80f4-0021f1f03c34)
+
 **Key observations:**
 - The majority of customers fall in the 1-2 frequency group. Hence, there's potential to convert one-time buyers into repeat customers.
 - There's a smaller but valuable segment of frequent purchasers (777 in the 5-20 frequency group)
 
 **Monetary Distribution:** This graph shows the distribution of customer spending.
 ![c](https://github.com/user-attachments/assets/2f52707b-6c0b-49e7-b31b-ca87398b79c5)
+
 **Key observations:**
 - The company has a solid base of mid-range spenders with 2516 in the 100-1k and 1560 in the 1k-10k.
 - There's a valuable segment of high-spending customers to nurture (104 in the 10k+)
