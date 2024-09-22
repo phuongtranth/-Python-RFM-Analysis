@@ -1,7 +1,21 @@
-# [Python] RFMAnalysis
-### Introduction
-### EDA 
-### Data Visualization and Insight
+# [Python] RFM Analysis
+### I. Introduction
+This project leverages Python to develop an RFM (Recency, Frequency, Monetary) segmentation model for SuperStore, a global retail company. The objective is to support the Marketing team in classifying a large customer dataset, enabling personalized and effective marketing strategies for the upcoming festive season. Comprehensive data preparation and segmentation were conducted to create customer groups based on RFM metrics, followed by visualizations to provide insights into customer behavior. Strategic recommendations were also provided to prioritize specific RFM components for optimizing SuperStore's marketing and sales efforts.
+#### Dataset
+This is a transnational data set which contains all the transactions occurring between 01/12/2010 and 09/12/2011 for a UK-based and registered non-store online retail. The company mainly sells unique all-occasion gifts. Many customers of the company are wholesalers.
+| Field       | Explaintion                                                                                                                                                 |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| InvoiceNo   | Invoice number. Nominal, a 6-digit integral number uniquely assigned to each transaction. If this code starts with letter 'C', it indicates a cancellation. |
+| StockCode   | Product (item) code. Nominal, a 5-digit integral number uniquely assigned to each distinct product.                                                         |
+| Description | Product (item) name. Nominal.                                                                                                                               |
+| Quantity    | The quantities of each product (item) per transaction. Numeric.                                                                                             |
+| InvoiceDate | Invoice Date and time. Numeric, the day and time when each transaction was generated.                                                                       |
+| UnitPrice   | Unit price. Numeric, Product price per unit in sterling.                                                                                                    |
+| CustomerID  | Customer number. Nominal, a 5-digit integral number uniquely assigned to each customer.                                                                     |
+| Country     | Country name. Nominal, the name of the country where each customer resides.                                                                                 |
+
+### II. EDA 
+### III. Data Visualization and Insight
 #### RFM Distribution Analysis
 **Recency Distribution:** The graph shows the distribution of customers based on how recently they made a purchase.
 ![a](https://github.com/user-attachments/assets/e41de750-18d4-441b-808a-da0281f3b65a)
@@ -32,7 +46,7 @@ The two highest bars are in the 0-100 range with over 2600 customers (over 60% o
 
 --> Overall, SuperStore Company has a mix of highly loyal, potentially loyal, and at-risk customers, presenting opportunities for targeted retention, acquisition, and cultivation efforts to optimize the value of its customer base.
 
-### Segment Characteristics and Recommendations
+### IV. Segment Characteristics and Recommendations
 | Segment                                               | Characteristics                                                                                                                             | Recommendations                                                                                                                                                                                                                                                                                           |
 | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Champions (19% of customers, 62% of value)            | • Highest monetary value, frequent recent purchases<br>• Likely long-term customers with strong brand loyalty<br>• High average order value | • Send personalized "Year in Review" thank you cards highlighting their top purchases<br>• Offer exclusive early access to holiday sales with additional discount<br>• Provide complimentary gift wrapping and priority shipping<br>• Invite to a virtual VIP holiday event with special product previews |
