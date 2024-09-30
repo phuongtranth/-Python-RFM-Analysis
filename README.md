@@ -1,6 +1,6 @@
 # [Python] RFM Analysis and Customer Segmentation Visualization
 ### I. Introduction
-In this project, I conducted an **RFM** (Recency, Frequency, Monetary) analysis for a **global retail company** -  SuperStore, utilizing Python to segment customers and deliver actionable insights **for the Marketing and Sales teams**. Through exploratory data analysis, segmentation modeling, and visualizations, I supported the teams in optimizing customer engagement and enhancing strategic decision-making by identifying key customer groups for targeted campaigns.
+In this project, I conducted an **RFM** (Recency, Frequency, Monetary) analysis for a **global retail company** -  SuperStore, utilizing Python to segment customers and deliver actionable insights **for the Marketing and Sales teams**. Through exploratory **data analysis**, **segmentation modeling**, and **visualizations**, I supported the teams in optimizing customer engagement and enhancing strategic decision-making by identifying key customer groups for targeted campaigns.
 
 #### Dataset
 This is a transnational data set which contains all the transactions occurring between 01/12/2010 and 09/12/2011 for a UK-based and registered non-store online retail. The company mainly sells unique all-occasion gifts. Many customers of the company are wholesalers.
